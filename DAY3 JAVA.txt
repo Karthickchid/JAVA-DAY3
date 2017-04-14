@@ -1,0 +1,388 @@
+ARRAY OF OBJECT :
+1)public class Emp {
+	private int rollno;
+	private String name;
+	public Emp(int rollno, String name) {
+		super();
+		this.rollno = rollno;
+		this.name = name;
+	}
+	public Emp() {
+		super();
+	}
+	public int getRollno() {
+		return rollno;
+	}
+	public void setRollno(int rollno) {
+		this.rollno = rollno;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void showEmp()
+	{
+		System.out.println( "rollno:"  +rollno+"\nName :" +name);
+	}
+	@Override
+	public String toString() {
+		return "Emp [rollno=" + rollno + ", name=" + name + "]";
+	}
+	
+}
+MAIN PART 
+
+import java.util.Scanner;
+public class emp1 {
+public static void main(String[] args) {
+	Scanner s=new Scanner (System.in);
+	//Emp s=new Emp(11,"athiya");
+	//s.showEmp();
+		
+	//Emp e=new Emp();
+	//e.setRollno(25);
+	//e.setName("CHID");
+   // System.out.println(e);
+		
+	//create an array of emp type
+	System.out.println("how many emp are there ");
+	int num_of_emp=s.nextInt();
+	Emp earr[]=new Emp[num_of_emp];
+
+	for (int i = 0; i < earr.length; i++) {
+		earr[i]=new Emp();
+		System.out.println("enter the id");
+	  //int id=s.nextInt();
+		earr[i].setRollno(s.nextInt());
+		System.out.println("enter the name");
+	 // i=s.nextInt();
+		earr[i].setName(s.next());
+	}
+	for (int i = 0; i < earr.length; i++){
+		earr[i].showEmp();
+		}
+	}
+}
+
+
+
+******************************************************
+
+2)
+import java.util.Date;
+public class Associate {
+           private int id;
+           private String name;
+           private Date joinDate;
+	
+           public Associate(int id, String name, Date joinDate) {
+			super();
+			this.id = id;
+			this.name = name;
+			this.joinDate = joinDate;
+		}
+
+		public int getId() {
+			return id;
+		}
+
+		public String getName() {
+			return name;
+		}
+
+		public Date getJoinDate() {
+			return joinDate;
+		}
+           
+           public void showData() {
+        	   System.out.println("Id: "  +this.id);
+        	   System.out.println("Name :" +this.name);
+        	   System.out.println("joindate: " +this.joinDate);
+		}
+}
+
+
+
+A)import java.util.Date;
+public class TestInheritance {
+
+	public static void main(String[] args) {
+		Date d=new Date((2017-1900),4,14);
+      Associate a= new Associate(20, " manoj", d);
+      a.showData();
+	}
+}
+
+OP
+Id: 20
+Name : manoj
+joindate: Sun May 14 00:00:00 IST 2017
+
+B)
+import java.util.Date;
+public class TestInheritance {
+
+	public static void main(String[] args) {
+		Date d=new Date((2017-1900),4,14);
+      Associate a= new Associate(20, " manoj", d);
+      // a.showData();
+    System.out.println(a);	
+
+	}
+}
+
+OP
+Associate@42e816
+
+C)
+import java.util.Date;
+public class Associate {
+           private int id;
+           private String name;
+           private Date joinDate;
+	
+           public Associate(int id, String name, Date joinDate) {
+			super();
+			this.id = id;
+			this.name = name;
+			this.joinDate = joinDate;
+		}
+
+		public int getId() {
+			return id;
+		}
+
+		public String getName() {
+			return name;
+		}
+
+		public Date getJoinDate() {
+			return joinDate;
+		}
+           
+           @Override
+		public String toString() {
+			
+			return this.id+ " " +this.name+ "  "+this.joinDate;
+		}
+
+		public void showData() {
+        	   System.out.println("Id: "  +this.id);
+        	   System.out.println("Name :" +this.name);
+        	   System.out.println("joindate: " +this.joinDate);
+		}
+}
+import java.util.Date;
+public class TestInheritance {
+
+	public static void main(String[] args) {
+		Date d=new Date((2017-1900),4,14);
+      Associate a= new Associate(20, " manoj", d);
+      // a.showData();
+    System.out.println(a);	
+
+	
+	}
+
+}
+
+OP
+
+**********************************************************************
+4)
+
+import java.util.Date;
+public class Associate {
+           private int id;
+           private String name;
+           private Date joinDate;
+	
+           public Associate(int id, String name, Date joinDate) {
+			super();
+			this.id = id;
+			this.name = name;
+			this.joinDate = joinDate;
+		}
+
+		public int getId() {
+			return id;
+		}
+
+		public String getName() {
+			return name;
+		}
+
+		public Date getJoinDate() {
+			return joinDate;
+		}
+           
+           
+
+		@Override
+		public String toString() {
+			return "Associate [id=" + id + ", name=" + name + ", joinDate="
+					+ joinDate + "]";
+		}
+
+		public void showData() {
+        	   System.out.println("Id: "  +this.id);
+        	   System.out.println("Name :" +this.name);
+        	   System.out.println("joindate: " +this.joinDate);
+		}
+}
+
+MAIN PART
+import java.util.Date;
+public class TestInheritance {
+
+	public static void main(String[] args) {
+		Date d=new Date((2017-1900),4,14);
+     // Associate a= new Associate(20, " manoj", d);
+      // a.showData();
+    //System.out.println(a);	
+		ELITIAN e=new ELITIAN (21,"ASHOK", d ,2032 ,"TUS-06");
+		
+		System.out.println(e);	
+
+	
+	}
+}
+
+DERIVED 
+import java.util.Date;
+public class ELITIAN extends Associate {
+private int groupId;
+private String mappedIBU;
+public ELITIAN(int id, String name, Date joinDate,int gId,String IBU) {
+	super(id, name, joinDate);
+	this.groupId=gId;
+	this.mappedIBU=IBU;
+	
+}
+@Override
+	public String toString() {
+		
+		return super.toString()+this.groupId+ "  "+this.mappedIBU ;
+	}
+
+}
+***************************************************************************************
+
+5)
+public abstract class Person {
+
+	 String fname;
+	 String lname;
+	 String address;
+	public Person(String fname, String lname, String address) {
+		super();
+		this.fname = fname;
+		this.lname = lname;
+		this.address = address;
+	}
+	
+	
+	public String getFname() {
+		return fname;
+	}
+
+
+	public String getLname() {
+		return lname;
+	}
+
+
+	public String getAddress() {
+		return address;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Person [fname=" + fname + ", lname=" + lname + ", address="
+				+ address + "]";
+	}
+	 public abstract void showDetails();
+}
+
+
+
+public  class Trainer extends Person {
+	private int num_of_skills;
+	private int expInYrs;
+	public Trainer(String fname, String lname, String address,int skills,int exp) {
+		super(fname, lname, address);
+		this.num_of_skills=skills;
+		this.expInYrs=exp;
+		}
+	
+	public void Trainermethod()
+	{
+		System.out.println("hii");
+	}
+	// override
+	public void showDetails()
+	{
+		System.out.println(this.getFname());
+		System.out.println(this.getLname());
+		System.out.println(this.getAddress());
+		System.out.println(this.num_of_skills);
+		System.out.println(this.expInYrs);
+	
+		
+	}
+
+}
+
+
+
+import java.util.Scanner;
+
+
+public class TLS {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		// UPCASTING
+		Person p=new Trainer(sc.next(),sc.next(),sc.next(),sc.nextInt(),sc.nextInt());
+		p.showDetails();
+		// downcasting
+		Trainer t=(Trainer) p;
+		t.Trainermethod();
+		
+		}
+}
+
+*********************************************************************************************************
+6)
+
+public class Maths {
+	
+	//method overloading
+int add(int n1,int n2)
+{
+	return(n1+n2);
+}
+double add(double n1,int n2)
+{
+	return(n1+n2);
+}
+float add(int n1,float n2)
+{
+	return(n1+n2);
+}
+public static void main(String[] args)
+{
+	Maths m=new Maths();
+	System.out.println(m.add(10, 10));
+	System.out.println(m.add(12, 3.4f));
+	System.out.println(m.add(36.25, 98));
+}
+}
+
+
+*************************************************************************************************
+
+
